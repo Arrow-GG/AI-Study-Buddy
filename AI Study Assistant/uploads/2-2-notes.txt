@@ -1,0 +1,1 @@
+Bayes theorem updates probability using evidence. Operating systems scheduling includes FCFS SJF and Round Robin. Deadlock has mutual exclusion hold and wait no preemption and circular wait.

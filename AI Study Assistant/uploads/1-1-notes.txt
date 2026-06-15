@@ -1,0 +1,1 @@
+Operating systems scheduling uses FCFS SJF Round Robin. Deadlock requires mutual exclusion hold and wait no preemption circular wait. Semaphore controls shared resource access.

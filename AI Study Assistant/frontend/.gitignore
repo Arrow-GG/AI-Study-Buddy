@@ -1,0 +1,14 @@
+.next/
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log
+yarn-error.log
+.DS_Store
+.env.local
+.env.*.local
+.idea/
+.vscode/
+*.swp
+*.swo
