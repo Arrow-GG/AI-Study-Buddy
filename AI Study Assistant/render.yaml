@@ -16,6 +16,8 @@ services:
         generateValue: true
       - key: DEBUG
         value: false
+      - key: GOOGLE_API_KEY
+        sync: false
       - key: CORS_ORIGINS
         value: https://ai-study-frontend.onrender.com
     rootDir: backend
