@@ -21,8 +21,8 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./data/app.db"
     SQLALCHEMY_ECHO: bool = False
     
-    # Redis Configuration
-    REDIS_URL: str = "redis://localhost:6379/0"
+    # Redis Configuration (optional - not available on Render free tier)
+    REDIS_URL: Optional[str] = "redis://localhost:6379/0"
     
     # JWT Configuration
     SECRET_KEY: str = "your-secret-key-change-in-production"
