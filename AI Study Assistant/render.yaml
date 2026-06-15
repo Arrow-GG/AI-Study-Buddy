@@ -1,13 +1,22 @@
+databases:
+  - name: ai-study-db
+    plan: free
+    postgresVersion: 15
+    region: ohio
+
 services:
   - type: web
     name: ai-study-backend
-    runtime: python
+    env: python
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    rootDir: backend
+    regions:
+      - ohio
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10
+        value: "3.10"
       - key: DATABASE_URL
         fromDatabase:
           name: ai-study-db
@@ -20,21 +29,16 @@ services:
         sync: false
       - key: CORS_ORIGINS
         value: https://ai-study-frontend.onrender.com
-    rootDir: backend
 
   - type: web
     name: ai-study-frontend
-    runtime: node
+    env: node
     plan: free
     buildCommand: npm ci && npm run build
-    startCommand: npm run start
+    startCommand: npm start
+    rootDir: frontend
+    regions:
+      - ohio
     envVars:
       - key: NEXT_PUBLIC_API_URL
         value: https://ai-study-backend.onrender.com/api
-    rootDir: frontend
-
-  - type: pserv
-    name: ai-study-db
-    ipAllowList: []
-    plan: free
-    postgresVersion: 15
