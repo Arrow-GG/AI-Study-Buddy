@@ -12,7 +12,7 @@ services:
     runtime: python
     plan: free
     region: oregon
-    rootDir: backend
+    rootDir: AI Study Assistant/backend
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app.main:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --timeout 120
     healthCheckPath: /api/health
@@ -52,7 +52,7 @@ services:
     runtime: node
     plan: free
     region: oregon
-    rootDir: frontend
+    rootDir: AI Study Assistant/frontend
     buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
